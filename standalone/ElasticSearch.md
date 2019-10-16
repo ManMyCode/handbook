@@ -1,10 +1,15 @@
-**1.使用二进制包安装(单节点)**
+**1.使用二进制包安装(单节点)**  
+
+文件清单:
+- elasticsearch-2.4.1.tar.gz
+- elasticsearch-head-master.zip
+- es-install.sh 安装脚本
+- elasticd 注册服务脚本
+
 ```shell
 #!/bin/bash
 #Description: es安装脚本
 BASE_PATH=$(cd `dirname $0`; pwd)
-#conf_path=/etc/erc-config.properties
-#source ${conf_path}
 #需先配置Jdk环境变量
 JAVA_HOME=/usr/local/java/jdk1.8.0_171
 ElASTIC_HOME=/usr/local/elasticsearch
@@ -54,7 +59,7 @@ chkconfig elasticd on
 service elasticd start 
 ```
 
-服务启停脚本 `elasticd`
+注册服务脚本: `elasticd`
 ```shell
 #!/bin/bash  
 # chkconfig: 2345 50 95
